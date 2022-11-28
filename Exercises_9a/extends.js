@@ -29,11 +29,15 @@ class Employee extends Person{
     getFullName(){
         return this.firstName + ' ' + this.lastName;
     }
+
+    getGrossPay(hoursWorked){
+        return hoursWorked * this.payRate;
+    }
 }
 
 console.log('------------------')
 
 employee1 = new Employee('Kris', 'Tales', 1, 'Crystal Manager', 59.19);
 employee3 = new Employee('Bryan', 'Yan', 3, 'Psuedo Manager', 999.03);
-console.log(`Id: ${employee1.id} | NAME: ${employee1.getFullName()} | POSITION: ${employee1.jobTitle} | PAY: ${employee1.payRate}`);
-console.log(`Id: ${employee3.id} | NAME: ${employee3.getFullName()} | POSITION: ${employee3.jobTitle} | PAY: ${employee3.payRate}`);
+console.log(`Id: ${employee1.id} | NAME: ${employee1.getFullName()} | POSITION: ${employee1.jobTitle} | PAY: ${employee1.payRate} GROSS PAY: ${employee1.getGrossPay(39)}`);
+console.log(`Id: ${employee3.id} | NAME: ${employee3.getFullName()} | POSITION: ${employee3.jobTitle} | PAY: ${employee3.payRate} GROSS PAY: ${employee3.getGrossPay(39)}`);
